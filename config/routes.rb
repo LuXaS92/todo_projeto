@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'task#index'
+  root 'tasks#index'
 
   resources :tasks, except: %i[show]
 end
