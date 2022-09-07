@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ edit update destroy ]
 
   def index
-    @task = Task.all
+    @tasks = Task.all
   end
 
   def new
@@ -12,14 +12,14 @@ class TasksController < ApplicationController
   def edit 
   end
 
-  def create
+  def create 
     @task = Task.new(task_params)
 
     
     if @task.save
       redirect_to tasks_path, notice: "Tarefa foi criada com sucesso."
     else
-      flash.now[:alert] = @task.errors.full_messages.to_sentense
+      flash.now[:alert] = @task.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity 
     end
   end
@@ -28,7 +28,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to tasks_path, notice: "Tarefa foi atulizada com sucesso."    
     else
-      flash.now[:alert] = @task.errors.full_messages.to_sentense
+      flash.now[:alert] = @task.errors.full_messages.to_sentence
       render :edit, status: :unprocessable_entity
     end
   end
