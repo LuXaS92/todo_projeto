@@ -11,3 +11,7 @@ html, body {
     background-position: center;
     background-size: cover ;
 }
+
+main {
+    opacity: 0.87;
+}
