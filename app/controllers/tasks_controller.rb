@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ edit update destroy ]
 
   def index
-    @tasks = Task.order(:due_date)
+    @tasks = Task.only_parents.order(:due_date)
   end
 
   def new
