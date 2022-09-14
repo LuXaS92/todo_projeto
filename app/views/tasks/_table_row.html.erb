@@ -13,7 +13,7 @@
 
   <td class='text-right ps-0'>
     <% if task.parent? %>
-      <%= link_to '+ Sub-tarefa', new_task_path, class: 'btn btn-success btn-sm' %>
+      <%= link_to '+ Sub-tarefa', new_task_path(parent_id: task.id), class: 'btn btn-success btn-sm' %>
     <% end %>
 
     <%= link_to 'Editar', edit_task_path(task), class: 'btn btn-secondary btn-sm' %>
