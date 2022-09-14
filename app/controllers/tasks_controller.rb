@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  include Exportable
+
   before_action :set_task, only: %i[ edit update destroy ]
 
   def index
@@ -37,6 +39,7 @@ class TasksController < ApplicationController
     @task.destroy
       redirect_to tasks_url, notice: "Tarefa removida com secesso."
   end
+  
 
   private
 
